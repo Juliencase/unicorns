@@ -1,21 +1,22 @@
 <%- include header %>
-<div class="container p-4">
+<div class="container-fluid p-4">
   <div class="row">
-    <div class="container col-md-4">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title text-danger"><%=data[0].title%></h5>
-          <p class="card-text"><%=data[0].text%></p>
-          <p>Lache ton com</p>
-          <textarea name="card-coment" rows="3" cols="20"placeholder="Lance ton venin ici !"></textarea>
-          <a href="#" class="btn btn-primary">Voir les commentaires</a>
-          <p class="card-author">Artiste : <%=data[0].author%></p>
-          <p class="card-category">Crée le :<%=data[0].category%></p>
-          <p class="card-date_create">Crée le :(<%= moment(data[0].date_create).format('LL') %>) </p>
-
+    <% for(var i = 0; i < data.length; i++) { %>
+      <div class="container col-md-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title text-danger"><%=data[i].title%></h5>
+            <p class="card-text"><%=data[i].text%></p>
+            <h3>Lache ton com !!!!</h3>
+            <textarea name="card-coment" rows="3" cols="22"placeholder="Lance ton venin ici !"></textarea>
+            <a href="#" class="btn btn-primary">Voir les commentaires</a>
+            <p class="card-author py-2">Artiste : <%=data[i].pseudo%></p>
+            <p class="card-date_create py-1">Crée le : <%= moment(data[i].date_create).format('ll  ') %> </p>
+            <a href="#" class="card-category">catégorie : <%=data[i].category_name%></a>
+          </div>
         </div>
       </div>
-    </div>
+    <% } %>
   </div>
 </div>
 <%- include footer %>

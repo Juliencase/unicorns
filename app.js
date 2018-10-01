@@ -9,6 +9,7 @@ var express = require('express')
 
 
 var moment = require('moment');
+moment.locale('fr');
 var session = require('express-session')
 var app = express();
 var mysql = require('mysql');
