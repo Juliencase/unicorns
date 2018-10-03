@@ -8,7 +8,6 @@ exports.getArticle = function(callback){
     if(err){
       console.log(err)
     }else{
-      console.log(result)
       callback(result)
     }
   })

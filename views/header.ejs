@@ -16,18 +16,24 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+
+      <% if(connection){ %>
       <li class="nav-item">
         <a class="nav-link" href="#">Créer un article</a>
       </li>
+      <% } %>
       <li class="nav-item">
         <a class="nav-link" href="https://www.google.com/search?q=note+mon+caca&client=ubuntu&hs=bvW&channel=fs&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiP2sC3q93dAhUF3xoKHYzqCDwQ_AUICigB&biw=1920&bih=919">trouve les licornes les plus chaudes de ta région!</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Se connecter</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Se déconnecter</a>
-      </li>
+      <% if(connection){ %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Se déconnecter</a>
+        </li>
+      <% } else{ %>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Se connecter</a>
+        </li>
+      <% } %>
     </ul>
   </div>
 </nav>

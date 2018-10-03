@@ -2,16 +2,21 @@
 <div class="container-fluid py-5">
   <div class="row">
     <% for(var i = 0; i < data.length; i++) { %>
-      <div class="container col-md-3">
+      <div class="container col-md-2">
         <div class="card mx-auto" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title text-danger"><%=data[i].title%></h5>
             <p class="card-text"><%=data[i].text%></p>
-            <h3>Lache ton com !!!!</h3>
-            <textarea name="card-coment" rows="3" cols="22"placeholder="Lance ton venin ici !"></textarea>
-            <a href="#" class="btn btn-primary">Voir les commentaires</a>
+            <% if(connection){ %>
+              <h3>Lache ton com !!!!</h3>
+              <form class="" action="index.html" method="post">
+                <textarea name="card-coment" rows="3" cols="22"placeholder="Lance ton venin ici !"></textarea>
+                <button id="btn-coment" type="submit" class="btn btn-outline-danger my-3">Valider</button>
+              </form>
+              <a href="#" class="btn btn-primary">Voir les commentaires</a>
+            <% } %>
             <p class="card-author py-2">Artiste : <%=data[i].pseudo%></p>
-            <p class="card-date_create py-1">Crée le : <%= moment(data[i].date_create).format('ll  ') %> </p>
+            <p class="card-date_create py-1">Crée le : <%= moment(data[i].date_create).format('ll') %> </p>
             <a href="#" class="card-category">catégorie : <%=data[i].category_name%></a>
           </div>
         </div>

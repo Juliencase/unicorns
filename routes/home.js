@@ -13,5 +13,4 @@ router.get('/login', function (req, res) {
   res.send('login');
   });
 
-
 module.exports = router;
