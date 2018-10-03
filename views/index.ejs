@@ -1,9 +1,9 @@
 <%- include header %>
-<div class="container-fluid p-4">
+<div class="container-fluid py-5">
   <div class="row">
     <% for(var i = 0; i < data.length; i++) { %>
       <div class="container col-md-3">
-        <div class="card" style="width: 18rem;">
+        <div class="card mx-auto" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title text-danger"><%=data[i].title%></h5>
             <p class="card-text"><%=data[i].text%></p>

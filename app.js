@@ -6,6 +6,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , home = require('./routes/home.js')
+  , login = require('./lib/login.js')
 
 
 var moment = require('moment');
@@ -34,9 +35,9 @@ app.use(session({
 // development only
 console.log(home);
 app.get('/', home);//call for main home page
-// app.get('/login', routes.home);//call for login page
-// app.post('/login', login.login);//call for login post
-app.use('/home',home)
+app.get('/login', login.login);//call for login page
+app.post('/login', login.login);//call for login post
+app.use('/home',home);
 
 //Middleware
 

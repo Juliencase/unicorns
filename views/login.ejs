@@ -1,54 +1,20 @@
-<!-- Material form login -->
-<mdb-card>
-
-  <mdb-card-header class="danger-color white-text text-center py-4">
-    <h5>
-      <strong>Sign in</strong>
-    </h5>
-  </mdb-card-header>
-
-
-  <!--Card content-->
-  <mdb-card-body class="px-lg-5 pt-0">
-
-    <!-- Form -->
-    <form class="text-center" color="danger-color">
-
-      <!-- Email -->
-      <div class="md-form">
-        <input type="text" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
-        <label for="materialLoginFormPseudo" name="login">login</label>
-      </div>
-      <!-- Password -->
-      <div class="md-form">
-        <input type="password" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
-        <label for="materialLoginFormPassword" name="password">Mot de passe</label>
-      </div>
-
-      <div class="d-flex justify-content-around">
-        <div>
-          <!-- Remember me -->
-          <mdb-checkbox>C'est qui ?</mdb-checkbox>
-        </div>
-        <div>
-          <!-- Forgot password -->
-          <a href="" color="danger-color">Mot de passe oublié ? dommage !</a>
-        </div>
-      </div>
-
-      <!-- Sign in button -->
-      <button mdbBtn color="danger-color" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
-        type="submit">Se connecter</button>
-
-      <!-- Register -->
-      <p>Pas encore membre?
-        <a href="">Dommage encore</a>
-      </p>
-
-    </form>
-    <!-- Form -->
-
-  </mdb-card-body>
-
-</mdb-card>
-<!-- Material form login -->
+<%- include header %>
+<div class="container pt-5">
+  <form>
+    <div class="form-group">
+      <label for="exampleInputLogin">Login</label>
+      <input type="login" class="form-control" id="exampleInputLogin" aria-describedby="loginHelp" name="pseudo" placeholder="Ecrire ici avec un stylo">
+      <small id="loginHelp" class="form-text text-muted">You shall not pass</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Mot de passe</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Maux deux pace">
+    </div>
+    <div class="form-check pb-3">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Clic ici pour devenir riche !</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+  </form>
+</div>
+<%- include footer %>
