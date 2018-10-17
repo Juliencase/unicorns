@@ -10,14 +10,16 @@
             <% if(connection){ %>
               <h3>Lache ton com !!!!</h3>
               <form class="" action="index.html" method="post">
-                <textarea name="card-coment" rows="3" cols="22"placeholder="Lance ton venin ici !"></textarea>
+                <textarea name="coment" rows="3" cols="22"placeholder="Lance ton venin ici !"></textarea>
                 <button id="btn-coment" type="submit" class="btn btn-outline-danger my-3">Valider</button>
               </form>
-              <a href="#" class="btn btn-primary">Voir les commentaires</a>
+              <a href="/article/<%=data[i].id%>" class="btn btn-primary">Voir les commentaires</a>
             <% } %>
-            <p class="card-author py-2">Artiste : <%=data[i].pseudo%></p>
-            <p class="card-date_create py-1">Crée le : <%= moment(data[i].date_create).format('ll') %> </p>
-            <a href="#" class="card-category">catégorie : <%=data[i].category_name%></a>
+            <div class="border border-danger rounded text-center mt-2">
+              <p class="card-author py-2">Artiste : <%=data[i].pseudo%></p>
+              <p class="card-date_create py-1">Crée le : <%= moment(data[i].date_create).format('ll') %> </p>
+              <a href="#" class="card-category">catégorie : <%=data[i].category_name%></a>
+            </div>
           </div>
         </div>
       </div>

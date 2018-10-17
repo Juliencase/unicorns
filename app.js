@@ -8,6 +8,7 @@ var express = require('express')
   , home = require('./routes/home.js')
   , login = require('./lib/login.js')
   , logout = require('./lib/logout.js')
+  , showComent = require('./lib/showComent.js')
 
 
 var moment = require('moment');
@@ -40,7 +41,11 @@ app.get('/', home);//call for main home page
 app.get('/login', login.login);//call for login page
 app.post('/login', login.login); //call for login post
 app.use('/home',home);
-app.get('/logout', logout.logout)
+app.get('/logout', logout.logout);
+app.get('/article/:id',showComent.showComent, function (req, res, callback) {
+  res.render('coment.ejs')
+});
+
 
 //Middleware
 
