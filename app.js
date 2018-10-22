@@ -9,6 +9,7 @@ var express = require('express')
   , login = require('./lib/login.js')
   , logout = require('./lib/logout.js')
   , showComent = require('./lib/showComent.js')
+  , coment = require('./lib/coment.js')
 
 
 var moment = require('moment');
@@ -40,6 +41,8 @@ app.use(session({
 app.get('/', home);//call for main home page
 app.get('/login', login.login);//call for login page
 app.post('/login', login.login); //call for login post
+app.get('/coment', coment.coment);//call for coment page
+app.post('/coment', coment.coment);//call for coment post
 app.use('/home',home);
 app.get('/logout', logout.logout);
 app.get('/article/:id',showComent.showComent, function (req, res, callback) {

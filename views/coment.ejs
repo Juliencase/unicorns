@@ -10,8 +10,8 @@
       <div class="border p-2">
       <!-- author/date coment -->
       <p class="card-text">
-        Ajouté le : <%= moment(data[i].date_coment).format('ll') %><br>
-        Auteur: <%=data[i].pseudo%>
+        Auteur : <%=data[i].pseudo%><br>
+        Ajouté <%= moment(data[i].date_coment).fromNow() %>
       </p>
       <!-- text coment -->
       <p class="card-text">
