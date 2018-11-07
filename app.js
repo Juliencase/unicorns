@@ -1,8 +1,7 @@
 /**
 * Module dependencies.
 */
-var express = require('express')
-  // , routes = require('./routes')
+const express = require('express')
   , http = require('http')
   , path = require('path')
   , home = require('./routes/home.js')
@@ -12,12 +11,12 @@ var express = require('express')
   , coment = require('./lib/coment.js')
 
 
-var moment = require('moment');
+const moment = require('moment');
 moment.locale('fr');
-var session = require('express-session')
-var app = express();
-var mysql = require('mysql');
-var bodyParser = require("body-parser");
+const session = require('express-session')
+const app = express();
+const mysql = require('mysql');
+const bodyParser = require("body-parser");
 
 // all environments
 app.set('port', process.env.PORT || 8080);
@@ -36,7 +35,6 @@ app.use(session({
               cookie: { maxAge: 30*24*60*60*1000 }
             }));
 
-
 // development only
 app.get('/', home);//call for main home page
 app.get('/login', login.login);//call for login page
@@ -45,8 +43,8 @@ app.get('/coment', coment.coment);//call for coment page
 app.post('/coment', coment.coment);//call for coment post
 app.use('/home',home);
 app.get('/logout', logout.logout);
-app.get('/article/:id',showComent.showComent, function (req, res, callback) {
-  res.render('coment.ejs')
+app.get('/article/:id', function (req, res) {
+  showComent.showComent (req.params.id, res)
 });
 
 

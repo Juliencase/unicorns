@@ -9,8 +9,9 @@
             <p class="card-text"><%=data[i].text%></p>
             <% if(connection){ %>
               <h3>Lache ton com !!!!</h3>
-              <form method="post">
+              <form method="post" action="/coment">
                 <textarea name="coment" rows="3" cols="22"placeholder="Lance ton venin ici !"></textarea>
+                <input type="hidden" name="Idarticle" value="<%=data[i].id %>">
                 <button id="btn-coment" type="submit" class="btn btn-outline-danger my-3">Valider</button>
               </form>
               <a href="/article/<%=data[i].id%>" class="btn btn-primary">Voir les commentaires</a>
